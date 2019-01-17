@@ -81,6 +81,7 @@
         <activity android:name="com.linyang.android_study_demo_01.io.IOActivity" />
         <activity android:name="com.linyang.android_study_demo_01.android_presentation.PresentationActivity" />
         <activity android:name="com.linyang.android_study_demo_01.android_thread.AsyncThreadPoolActivity" />
+        <activity android:name=".android_thread.CountDownLatchActivity" />
 
         <!--自定义小部件服务-->
         <receiver

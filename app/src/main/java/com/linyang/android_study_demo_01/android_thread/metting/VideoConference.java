@@ -1,4 +1,4 @@
-package com.linyang.android_study_demo_01.android_thread;
+package com.linyang.android_study_demo_01.android_thread.metting;
 
 import com.linyang.android_study_demo_01.util.LogUtil;
 
@@ -13,7 +13,7 @@ public class VideoConference implements Runnable {
     // 并且CountDownLatch只允许进入一次，一旦内部计数器等于0，再调用这个方法将不起作用，如果还有第二次并发等待，你还得创建一个新的CountDownLatch
     private CountDownLatch mCountDownLatch;
 
-    VideoConference(int count) {
+    public VideoConference(int count) {
         this.mCountDownLatch = new CountDownLatch(count);
     }
 

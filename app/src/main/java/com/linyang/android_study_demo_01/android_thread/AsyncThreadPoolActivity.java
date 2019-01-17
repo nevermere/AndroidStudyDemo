@@ -9,6 +9,7 @@ import android.view.View;
 import com.linyang.android_study_demo_01.R;
 import com.linyang.android_study_demo_01.app.BaseActivity;
 import com.linyang.android_study_demo_01.util.LogUtil;
+import com.linyang.android_study_demo_01.widget.ArmsUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -145,20 +146,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
                 break;
 
             case R.id.bt_count_down_latch: // 控制多线程并发等待
-                // 模拟10人会议
-                VideoConference videoConference = new VideoConference(10);
-                Thread viewThread = new Thread(videoConference);
-                viewThread.start();
-
-                // 模拟参会人员
-                Thread[] threads = new Thread[10];
-                for (int i = 0; i < threads.length; i++) {
-                    threads[i] = new Thread(new Participant("" + (i + 1), videoConference));
-                }
-
-                for (Thread t : threads) {
-                    t.start();
-                }
+                ArmsUtils.startActivity(this, CountDownLatchActivity.class);
                 break;
         }
     }

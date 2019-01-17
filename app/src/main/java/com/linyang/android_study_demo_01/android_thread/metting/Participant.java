@@ -1,4 +1,4 @@
-package com.linyang.android_study_demo_01.android_thread;
+package com.linyang.android_study_demo_01.android_thread.metting;
 
 
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ public class Participant implements Runnable {
     private String mName;
     private VideoConference mVideoConference;
 
-    Participant(String name, VideoConference videoConference) {
+    public Participant(String name, VideoConference videoConference) {
         mName = name;
         mVideoConference = videoConference;
     }
