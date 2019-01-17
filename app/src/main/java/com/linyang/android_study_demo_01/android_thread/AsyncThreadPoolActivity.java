@@ -1,4 +1,4 @@
-package com.linyang.android_study_demo_01.thread_pool;
+package com.linyang.android_study_demo_01.android_thread;
 
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -34,9 +34,12 @@ public class AsyncThreadPoolActivity extends BaseActivity {
     AppCompatButton btCallable;
     @BindView(R.id.bt_handler_thread)
     AppCompatButton btHandlerThread;
+    @BindView(R.id.bt_count_down_latch)
+    AppCompatButton btCountDownLatch;
 
     private HandlerThread mHandlerThread;
     private Handler mHandler;
+
 
     @Override
     protected void onDestroy() {
@@ -64,7 +67,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.bt_thread, R.id.bt_runnable, R.id.bt_callable, R.id.bt_handler_thread, R.id.bt_handler_thread_quit})
+    @OnClick({R.id.bt_thread, R.id.bt_runnable, R.id.bt_callable, R.id.bt_handler_thread, R.id.bt_count_down_latch})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_thread:
@@ -139,6 +142,23 @@ public class AsyncThreadPoolActivity extends BaseActivity {
                 }
 
                 mHandler.sendMessage(mHandler.obtainMessage(MSG_UPDATE_INFO, "fuck you"));
+                break;
+
+            case R.id.bt_count_down_latch: // 控制多线程并发等待
+                // 模拟10人会议
+                VideoConference videoConference = new VideoConference(10);
+                Thread viewThread = new Thread(videoConference);
+                viewThread.start();
+
+                // 模拟参会人员
+                Thread[] threads = new Thread[10];
+                for (int i = 0; i < threads.length; i++) {
+                    threads[i] = new Thread(new Participant("" + (i + 1), videoConference));
+                }
+
+                for (Thread t : threads) {
+                    t.start();
+                }
                 break;
         }
     }

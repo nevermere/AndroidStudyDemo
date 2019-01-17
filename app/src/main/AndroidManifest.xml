@@ -80,7 +80,7 @@
         <activity android:name="com.linyang.android_study_demo_01.cache.PhotoWallActivity" />
         <activity android:name="com.linyang.android_study_demo_01.io.IOActivity" />
         <activity android:name="com.linyang.android_study_demo_01.android_presentation.PresentationActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.thread_pool.AsyncThreadPoolActivity" />
+        <activity android:name="com.linyang.android_study_demo_01.android_thread.AsyncThreadPoolActivity" />
 
         <!--自定义小部件服务-->
         <receiver

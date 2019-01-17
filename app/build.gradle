@@ -46,8 +46,8 @@ dependencies {
     implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha09'
     androidTestImplementation 'android.arch.navigation:navigation-testing:1.0.0-alpha08'
     // ButterKnife
-    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     // WorkManager
     implementation 'android.arch.work:work-runtime:1.0.0-beta02'
     implementation 'android.arch.work:work-firebase:1.0.0-alpha11'

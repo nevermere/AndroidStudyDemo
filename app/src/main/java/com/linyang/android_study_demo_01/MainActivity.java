@@ -15,7 +15,7 @@ import com.linyang.android_study_demo_01.cache.PhotoWallActivity;
 import com.linyang.android_study_demo_01.gesture_detector.GestureDetectorActivity;
 import com.linyang.android_study_demo_01.io.IOActivity;
 import com.linyang.android_study_demo_01.jetpack.activity.JetPackMainActivity;
-import com.linyang.android_study_demo_01.thread_pool.AsyncThreadPoolActivity;
+import com.linyang.android_study_demo_01.android_thread.AsyncThreadPoolActivity;
 import com.linyang.android_study_demo_01.ui.AppWidgetActivity;
 import com.linyang.android_study_demo_01.ui.BezierRoundActivity;
 import com.linyang.android_study_demo_01.ui.CardViewActivity;
