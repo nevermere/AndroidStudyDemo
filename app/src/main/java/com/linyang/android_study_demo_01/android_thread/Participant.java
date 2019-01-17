@@ -12,7 +12,7 @@ public class Participant implements Runnable {
     private String mName;
     private VideoConference mVideoConference;
 
-    public Participant(String name, VideoConference videoConference) {
+    Participant(String name, VideoConference videoConference) {
         mName = name;
         mVideoConference = videoConference;
     }

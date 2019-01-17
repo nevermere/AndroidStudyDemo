@@ -13,11 +13,11 @@ public class VideoConference implements Runnable {
     // 并且CountDownLatch只允许进入一次，一旦内部计数器等于0，再调用这个方法将不起作用，如果还有第二次并发等待，你还得创建一个新的CountDownLatch
     private CountDownLatch mCountDownLatch;
 
-    public VideoConference(int count) {
+    VideoConference(int count) {
         this.mCountDownLatch = new CountDownLatch(count);
     }
 
-    public void arrive(String name) {
+    void arrive(String name) {
         LogUtil.i(name + "号参会人员到达会议室");
         mCountDownLatch.countDown();
         LogUtil.i("剩余人数：" + mCountDownLatch.getCount());
