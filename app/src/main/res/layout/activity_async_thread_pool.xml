@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thread" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_runnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Runnable" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_callable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Callable" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_handler_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HandlerThread" />
+
+</LinearLayout>

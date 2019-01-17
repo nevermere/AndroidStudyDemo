@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_click_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="手势检测" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_click_view_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="手势检测2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_simple_gesture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="构造函数一" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_simple_gesture_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="构造函数二" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_failing_ball"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="轨迹球" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="缩放手势检测" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_multi_touch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="多点触控" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_draw_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="图片拖动" />
+
+</LinearLayout>

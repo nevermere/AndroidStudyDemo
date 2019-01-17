@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_rotate_3d_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义3D旋转动画" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_frame_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帧动画" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_value_animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画(Value Animator)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_object_animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画(Object Animator)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_animator_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画(Animator Set)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_animator_set_personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义属性动画(Wrapper)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_animator_set_personal2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义属性动画(Listener)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_android_interpolator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插值器" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_animation_advanced"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画进阶" />
+
+    <ImageView
+        android:id="@+id/iv_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</LinearLayout>

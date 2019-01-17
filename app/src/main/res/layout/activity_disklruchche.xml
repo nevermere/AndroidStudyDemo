@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_download_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载并写入缓存" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_read_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取缓存" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除缓存" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_image_cache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/test" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cache_size"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="缓存目录大小:"
+        android:textAlignment="center" />
+
+</LinearLayout>

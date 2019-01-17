@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义卡片view属性-->
+    <declare-styleable name="MyCardView">
+        <!--模式-->
+        <attr name="card_view_mode" format="integer">
+            <enum name="mode_top" value="0" />
+            <enum name="mode_bottom" value="1" />
+            <enum name="mode_top_bottom" value="2" />
+        </attr>
+        <!--小圆圈的颜色-->
+        <attr name="card_view_color" format="color" />
+        <!--小圆圈的半径-->
+        <attr name="card_view_radius" format="dimension" />
+        <!--小圆圈间距-->
+        <attr name="card_view_gap" format="dimension" />
+    </declare-styleable>
+
+
+    <!--自定义叶子加载界面属性-->
+    <declare-styleable name="LeafLoadingView">
+        <attr name="load_color" format="color" />
+        <attr name="un_load_color" format="color" />
+    </declare-styleable>
+
+
+</resources>

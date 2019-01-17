@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_moshi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用Moshi解析" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_gson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用Gson解析" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_jackson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用Jackson解析" />
+
+    <TextView
+        android:id="@+id/tv_time_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        android:gravity="center_vertical"
+        android:text="使用Moshi解析时间:" />
+
+    <TextView
+        android:id="@+id/tv_time_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        android:gravity="center_vertical"
+        android:text="使用Gson解析时间:" />
+
+    <TextView
+        android:id="@+id/tv_time_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        android:gravity="center_vertical"
+        android:text="使用Jackson解析时间:" />
+
+</LinearLayout>

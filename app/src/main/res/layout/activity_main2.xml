@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义卡片" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_polygon_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多边形网格属性图" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="折线统计图" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_chat_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="彩色圆环统计图" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_guaguaka_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="刮刮卡效果" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_cycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QQ音乐中圆形旋转碟子" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="字母导航栏" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_leaf_load_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="叶子加载进度条" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_bezier_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="贝塞尔曲线" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="界面滑动" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_horizontal_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="可横向滑动ScrollView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="通知栏" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_app_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="桌面小部件" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_update_skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更换皮肤" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="动画" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_window_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WindowManager" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_moshi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moshi解析" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_jetpack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android JetPack组件" />
+
+    </LinearLayout>
+
+</ScrollView>

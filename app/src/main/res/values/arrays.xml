@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主界面功能菜单列表-->
+    <string-array name="home_menu_arrays">
+        <item>自定义卡片</item>
+        <item>多边形网格属性图</item>
+        <item>折线统计图</item>
+        <item>彩色圆环统计图</item>
+        <item>刮刮卡效果</item>
+        <item>QQ音乐中圆形旋转碟子</item>
+        <item>字母导航栏</item>
+        <item>叶子加载进度条</item>
+        <item>贝塞尔曲线</item>
+        <item>界面滑动</item>
+        <item>可横向滑动ScrollView</item>
+        <item>通知栏</item>
+        <item>桌面小部件</item>
+        <item>更换皮肤</item>
+        <item>动画、插值器、渐变</item>
+        <item>WindowManager</item>
+        <item>Moshi解析</item>
+        <item>Android JetPack组件</item>
+        <item>手势检测</item>
+        <item>DiskLruCache缓存</item>
+        <item>照片墙</item>
+        <item>IO流处理</item>
+        <item>双屏异显</item>
+        <item>异步线程池</item>
+    </string-array>
+
+    <!--安卓动画插值器列表-->
+    <string-array name="android_interpolator_arrays">
+        <item>AccelerateDecelerateInterpolator</item>
+        <item>LinearInterpolator</item>
+        <item>AccelerateInterpolator</item>
+        <item>DecelerateInterpolator</item>
+        <item>AnticipateInterpolator</item>
+        <item>OvershootInterpolator</item>
+        <item>AnticipateOvershootInterpolator</item>
+        <item>BounceInterpolator</item>
+        <item>CycleInterpolator</item>
+        <item>PathInterpolator</item>
+        <item>FastOutLinearInInterpolator</item>
+        <item>FastOutSlowInInterpolator</item>
+        <item>LinearOutSlowInInterpolator</item>
+    </string-array>
+
+</resources>
