@@ -7,16 +7,13 @@ import com.linyang.android_study_demo_01.android_thread.checker.BaseChecker;
 import com.linyang.android_study_demo_01.android_thread.checker.DriveChecker;
 import com.linyang.android_study_demo_01.android_thread.checker.FileDiskChecker;
 import com.linyang.android_study_demo_01.android_thread.checker.MemoryChecker;
+import com.linyang.android_study_demo_01.android_thread.checker.StartUpTask;
 import com.linyang.android_study_demo_01.android_thread.metting.Participant;
 import com.linyang.android_study_demo_01.android_thread.metting.VideoConference;
 import com.linyang.android_study_demo_01.app.BaseActivity;
-import com.linyang.android_study_demo_01.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -69,11 +66,7 @@ public class CountDownLatchActivity extends BaseActivity {
                 break;
 
             case R.id.bt_check:
-                if (startUpCheck()) {
-                    LogUtil.i("开机自检完成");
-                } else {
-                    LogUtil.i("开机自检失败");
-                }
+                startUpCheck();
                 break;
         }
     }
@@ -84,30 +77,23 @@ public class CountDownLatchActivity extends BaseActivity {
      *
      * @return
      */
-    private boolean startUpCheck() {
-        try {
-            CountDownLatch countDownLatch = new CountDownLatch(3);
+    private void startUpCheck() {
+        StartUpTask startUpTask = new StartUpTask(3);
+        Thread startUpThread = new Thread(startUpTask);
+        startUpThread.start();
 
-            List<BaseChecker> checkerList = new ArrayList<>();
-            checkerList.add(new DriveChecker("驱动检查服务", countDownLatch));
-            checkerList.add(new FileDiskChecker("磁盘检查服务", countDownLatch));
-            checkerList.add(new MemoryChecker("内存检查服务", countDownLatch));
+        List<BaseChecker> checkerList = new ArrayList<>();
+        checkerList.add(new DriveChecker("驱动检查服务", startUpTask));
+        checkerList.add(new FileDiskChecker("磁盘检查服务", startUpTask));
+        checkerList.add(new MemoryChecker("内存检查服务", startUpTask));
 
-            Executor executor = Executors.newFixedThreadPool(3);
-            for (BaseChecker checker : checkerList) {
-                executor.execute(checker);
-            }
-
-            countDownLatch.await();
-
-            for (BaseChecker checker : checkerList) {
-                if (!checker.isServiceStart()) {
-                    return false;
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        Thread[] threads = new Thread[checkerList.size()];
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new Thread(checkerList.get(i));
         }
-        return true;
+
+        for (Thread t : threads) {
+            t.start();
+        }
     }
 }

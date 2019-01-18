@@ -1,6 +1,5 @@
 package com.linyang.android_study_demo_01.android_thread.checker;
 
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -9,13 +8,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class DriveChecker extends BaseChecker {
 
-    public DriveChecker(String serviceName, CountDownLatch countDownLatch) {
-        super(serviceName, countDownLatch);
+    public DriveChecker(String serviceName, StartUpTask startUpTask) {
+        super(serviceName, startUpTask);
     }
 
     @Override
     public void verifyService() {
-        long duration = (long) (Math.random() * 10);
+        long duration = (long) (Math.random() * 15);
         try {
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException e) {

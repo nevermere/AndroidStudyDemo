@@ -1,9 +1,5 @@
 package com.linyang.android_study_demo_01.android_thread.checker;
 
-import com.linyang.android_study_demo_01.util.LogUtil;
-
-import java.util.concurrent.CountDownLatch;
-
 /**
  * 描述:
  * Created by fzJiang on 2019/01/17 16:57 星期四
@@ -11,42 +7,28 @@ import java.util.concurrent.CountDownLatch;
 public abstract class BaseChecker implements Runnable {
 
     private String mServiceName;
-    private boolean isServiceStart;
-    private CountDownLatch mCountDownLatch;
+    private StartUpTask mStartUpTask;
 
-    BaseChecker(String serviceName, CountDownLatch countDownLatch) {
+    public BaseChecker(String serviceName, StartUpTask startUpTask) {
         mServiceName = serviceName;
-        mCountDownLatch = countDownLatch;
+        mStartUpTask = startUpTask;
     }
 
     @Override
     public void run() {
+        boolean isServiceSuccess;
+        String error = null;
         try {
-            LogUtil.i("开启检查任务：" + mServiceName);
-
             verifyService();
-            isServiceStart = true;
-
-            LogUtil.i(mServiceName + " 检查通过");
+            isServiceSuccess = true;
         } catch (Throwable t) {
             t.printStackTrace(System.err);
-            isServiceStart = false;
-
-            LogUtil.i(mServiceName + " 检查不通过");
-
-        } finally {
-            if (mCountDownLatch != null) {
-                mCountDownLatch.countDown();
-            }
+            error = t.getMessage();
+            isServiceSuccess = false;
         }
-    }
-
-    public String getServiceName() {
-        return mServiceName;
-    }
-
-    public boolean isServiceStart() {
-        return isServiceStart;
+        if (mStartUpTask != null) {
+            mStartUpTask.finish(mServiceName, isServiceSuccess, error);
+        }
     }
 
     public abstract void verifyService();

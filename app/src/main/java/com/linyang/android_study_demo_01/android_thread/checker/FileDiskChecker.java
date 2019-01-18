@@ -1,6 +1,5 @@
 package com.linyang.android_study_demo_01.android_thread.checker;
 
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -9,8 +8,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class FileDiskChecker extends BaseChecker {
 
-    public FileDiskChecker(String serviceName, CountDownLatch countDownLatch) {
-        super(serviceName, countDownLatch);
+
+    public FileDiskChecker(String serviceName, StartUpTask startUpTask) {
+        super(serviceName, startUpTask);
     }
 
     @Override
