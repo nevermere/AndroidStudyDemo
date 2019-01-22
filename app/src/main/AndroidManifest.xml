@@ -23,14 +23,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.linyang.android_study_demo_01.MainActivity">
+
+        <activity android:name=".VideoSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
+        <activity android:name="com.linyang.android_study_demo_01.MainActivity" />
         <activity android:name="com.linyang.android_study_demo_01.ui.CardViewActivity" />
         <activity android:name="com.linyang.android_study_demo_01.ui.PolygonViewActivity" />
         <activity android:name="com.linyang.android_study_demo_01.ui.StatisticsViewActivity" />

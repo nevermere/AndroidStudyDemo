@@ -142,7 +142,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
                     };
                 }
 
-                mHandler.sendMessage(mHandler.obtainMessage(MSG_UPDATE_INFO, "fuck you"));
+                mHandler.sendMessage(mHandler.obtainMessage(MSG_UPDATE_INFO, "fff you"));
                 break;
 
             case R.id.bt_count_down_latch: // 控制多线程并发等待
@@ -155,6 +155,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
     public void onHandlerReceive(Message msg) {
         super.onHandlerReceive(msg);
         LogUtil.i("HandlerThread 处理消息:" + msg.obj.toString());
+
     }
 
     private static class MyAsyncTask extends AsyncTask<Integer, Integer, Void> {
