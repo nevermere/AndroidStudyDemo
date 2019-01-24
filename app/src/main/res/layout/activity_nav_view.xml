@@ -35,7 +35,7 @@
             android:textSize="18dp"
             android:visibility="gone" />
 
-        <com.linyang.android_study_demo_01.widget.MyNavView
+        <com.linyang.study.primary.custom_view.widget.MyNavView
             android:id="@+id/nav_view"
             android:layout_width="20dp"
             android:layout_height="match_parent"

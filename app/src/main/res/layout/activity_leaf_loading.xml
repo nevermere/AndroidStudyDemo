@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp">
 
-        <com.linyang.android_study_demo_01.widget.LeafLoadingView
+        <com.linyang.study.primary.custom_view.widget.LeafLoadingView
             android:id="@+id/leaf_loading"
             android:layout_width="match_parent"
             android:layout_height="60dp"

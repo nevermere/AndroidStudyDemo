@@ -8,7 +8,7 @@
     android:padding="16dp">
 
     <!--用法一-->
-    <com.linyang.android_study_demo_01.widget.MyCardView
+    <com.linyang.study.primary.custom_view.widget.MyCardView
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="#5ED6FF"
@@ -72,11 +72,11 @@
 
         </LinearLayout>
 
-    </com.linyang.android_study_demo_01.widget.MyCardView>
+    </com.linyang.study.primary.custom_view.widget.MyCardView>
 
 
     <!--用法二-->
-    <com.linyang.android_study_demo_01.widget.MyCardView
+    <com.linyang.study.primary.custom_view.widget.MyCardView
         android:layout_width="match_parent"
         android:layout_height="6dp"
         android:layout_marginTop="20dp"

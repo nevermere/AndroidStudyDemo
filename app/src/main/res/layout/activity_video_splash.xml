@@ -4,9 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.linyang.android_study_demo_01.widget.MyVideoView
+    <com.linyang.study.primary.custom_view.widget.MyVideoView
         android:id="@+id/splash_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true" />
 
 </LinearLayout>

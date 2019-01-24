@@ -5,7 +5,7 @@
     android:background="#fff"
     android:orientation="vertical">
 
-    <com.linyang.android_study_demo_01.widget.MyPolygonView
+    <com.linyang.study.primary.custom_view.widget.MyPolygonView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center" />

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.linyang.android_study_demo_01.widget.MyScrollView
+    <com.linyang.study.primary.custom_view.widget.MyScrollView
         android:id="@+id/my_scroll_view"
         android:layout_width="100dp"
         android:layout_height="50dp"

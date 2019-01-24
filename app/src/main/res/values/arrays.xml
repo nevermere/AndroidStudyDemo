@@ -27,6 +27,7 @@
         <item>IO流处理</item>
         <item>双屏异显</item>
         <item>异步线程池</item>
+        <item>IPC机制</item>
     </string-array>
 
     <!--安卓动画插值器列表-->

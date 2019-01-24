@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_start_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启服务" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_bind_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定服务" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_unbind_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解除绑定" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册监听" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_unregister_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解除注册" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加书籍" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_get_book_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取书籍列表" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_stop_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭服务" />
+
+</LinearLayout>

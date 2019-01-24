@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.linyang.android_study_demo_01.widget.HorizontalScrollViewEx
+    <com.linyang.study.primary.custom_view.widget.HorizontalScrollViewEx
         android:id="@+id/horizontal_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -83,7 +83,7 @@
         </LinearLayout>
 
 
-    </com.linyang.android_study_demo_01.widget.HorizontalScrollViewEx>
+    </com.linyang.study.primary.custom_view.widget.HorizontalScrollViewEx>
 
     <TextView
         android:id="@+id/tv_bottom"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.linyang.android_study_demo_01">
+    package="com.linyang.study">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,10 +10,21 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 在 屏幕最顶部显示addview-->
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <!--Binder Service访问权限-->
+    <uses-permission android:name="com.linyang.permission.ACCESS_BOOK_SERVICE" />
+    <!--AIDL Service访问权限-->
+    <uses-permission android:name="com.linyang.permission.ACCESS_AIDL_SERVICE" />
 
+    <!--声明远端Service访问所要求的权限-->
+    <permission
+        android:name="com.linyang.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.linyang.permission.ACCESS_AIDL_SERVICE"
+        android:protectionLevel="normal" />
 
     <application
-        android:name="com.linyang.android_study_demo_01.App"
+        android:name="com.linyang.study.App"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -21,88 +32,112 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-
-        <activity android:name=".VideoSplashActivity">
+        <activity android:name="com.linyang.study.VideoSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <activity android:name="com.linyang.android_study_demo_01.MainActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.CardViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.PolygonViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.StatisticsViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.ChatViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.GuaGuaKaViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.CycleViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.NavViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.LeafLoadingActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.BezierRoundActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.MyScrollViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.HorizontalScrollViewExActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.NotificationActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.DemoIntentActivity" />
-
-
-        <activity android:name="com.linyang.android_study_demo_01.ui.AppWidgetActivity">
-
+        <activity android:name=".primary.custom_view.AppWidgetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
             </intent-filter>
-
         </activity>
-        <activity android:name="com.linyang.android_study_demo_01.ui.SkinsActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.animation.AnimationActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.WindowManagerActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.ui.MoshiActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.jetpack.activity.JetPackMainActivity" />
-        <!--<activity android:name=".dagger_android.mvp.ui.activity.DaggerAndroidMainActivity" />-->
-        <activity android:name="com.linyang.android_study_demo_01.animation.InterpolatorActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.animation.AdvancedAnimationActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.gesture_detector.GestureDetectorActivity" />
 
         <activity
-            android:name="com.linyang.android_study_demo_01.gesture_detector.FailingBallActivity"
+            android:name=".primary.gesture_detector.FailingBallActivity"
             android:hardwareAccelerated="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.FailingBall" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.linyang.android_study_demo_01.gesture_detector.ScaleGestureDetectorActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.gesture_detector.MultiTouchActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.gesture_detector.DragViewActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.cache.DiskLruCacheActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.cache.PhotoWallActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.io.IOActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.android_presentation.PresentationActivity" />
-        <activity android:name="com.linyang.android_study_demo_01.android_thread.AsyncThreadPoolActivity" />
-        <activity android:name=".android_thread.CountDownLatchActivity" />
+
+        <activity android:name="com.linyang.study.MainActivity" />
+        <activity android:name=".primary.custom_view.CardViewActivity" />
+        <activity android:name=".primary.custom_view.PolygonViewActivity" />
+        <activity android:name="com.linyang.study.primary.custom_view.StatisticsViewActivity" />
+        <activity android:name=".primary.custom_view.ChatViewActivity" />
+        <activity android:name=".primary.custom_view.GuaGuaKaViewActivity" />
+        <activity android:name=".primary.custom_view.CycleViewActivity" />
+        <activity android:name=".primary.custom_view.NavViewActivity" />
+        <activity android:name=".primary.custom_view.LeafLoadingActivity" />
+        <activity android:name=".primary.custom_view.BezierRoundActivity" />
+        <activity android:name=".primary.custom_view.MyScrollViewActivity" />
+        <activity android:name=".primary.custom_view.HorizontalScrollViewExActivity" />
+        <activity android:name="com.linyang.study.other.NotificationActivity" />
+        <activity android:name="com.linyang.study.other.DemoIntentActivity" />
+        <activity android:name="com.linyang.study.other.SkinsActivity" />
+        <activity android:name=".primary.animation.AnimationActivity" />
+        <activity android:name="com.linyang.study.other.WindowManagerActivity" />
+        <activity android:name=".other.moshi.MoshiActivity" />
+        <activity android:name=".other.jetpack.activity.JetPackMainActivity" />
+        <activity android:name=".primary.animation.InterpolatorActivity" />
+        <activity android:name=".primary.animation.AdvancedAnimationActivity" />
+        <activity android:name=".primary.gesture_detector.GestureDetectorActivity" />
+        <activity android:name=".primary.gesture_detector.ScaleGestureDetectorActivity" />
+        <activity android:name=".primary.gesture_detector.MultiTouchActivity" />
+        <activity android:name=".primary.gesture_detector.DragViewActivity" />
+        <activity android:name=".primary.cache.DiskLruCacheActivity" />
+        <activity android:name=".primary.cache.PhotoWallActivity" />
+        <activity android:name=".primary.io.IOActivity" />
+        <activity android:name=".primary.presentation.PresentationActivity" />
+        <activity android:name=".primary.android_thread.AsyncThreadPoolActivity" />
+        <activity android:name=".primary.android_thread.CountDownLatchActivity" />
+        <activity android:name=".advanced.android_ipc.AndroidIPCActivity" />
+        <activity android:name=".advanced.android_ipc.messenger.MessengerActivity" />
+        <activity android:name=".advanced.android_ipc.content_provider.ContentProviderActivity" />
+        <activity android:name=".advanced.android_ipc.binder.BinderTestActivity" />
+        <activity android:name=".advanced.android_ipc.aidl.AIDLTestActivity" />
+        <activity android:name=".advanced.android_ipc.binder_poll.BinderPoolActivity" />
 
         <!--自定义小部件服务-->
         <receiver
-            android:name="com.linyang.android_study_demo_01.provider.MyAppWidgetProvider"
-            android:exported="true">
+            android:name=".primary.provider.MyAppWidgetProvider"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="com.linyang.custiomviewdemo.CLICK_APP_WIDGET" />
-
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE_OPTIONS" />
                 <action android:name="android.appwidget.action.APPWIDGET_RESTORED" />
                 <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.AppWidgetProvider"
                 android:resource="@xml/appwidget_provider_info" />
         </receiver>
+
+        <!--自定义ContentProvider-->
+        <provider
+            android:name=".advanced.android_ipc.content_provider.IContentProvider"
+            android:authorities="com.linyang.study.server.provider"
+            android:permission="com.linyang.PROVIDER"
+            android:process=":provider" />
+
+        <!--AIDL远程服务器-->
+        <service
+            android:name="com.linyang.aidl.AIDLService"
+            android:process=":remote_aidl" />
+
+        <!--Binder远程服务器-->
+        <service
+            android:name=".advanced.android_ipc.binder.IBookManagerService"
+            android:process=":remote_binder" />
+
+        <!--Binder Poll远程服务器-->
+        <service
+            android:name=".advanced.android_ipc.binder_poll.BinderPoolService"
+            android:process=":remote_binder_pool" />
+
+        <!--Messenger远程服务器-->
+        <service
+            android:name=".advanced.android_ipc.messenger.MessengerService"
+            android:process=":remote_messenger" />
 
     </application>
 

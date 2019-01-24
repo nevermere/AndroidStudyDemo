@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.linyang.android_study_demo_01.animation.widget.DurationView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.linyang.study.primary.animation.widget.DurationView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -65,4 +65,4 @@
     </RelativeLayout>
 
 
-</com.linyang.android_study_demo_01.animation.widget.DurationView>
+</com.linyang.study.primary.animation.widget.DurationView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_init_pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="初始化Binder池"
+        android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_con_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="连接ISecurityCenter"
+        android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_con_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="连接IComputer"
+        android:textAllCaps="false" />
+
+</LinearLayout>
