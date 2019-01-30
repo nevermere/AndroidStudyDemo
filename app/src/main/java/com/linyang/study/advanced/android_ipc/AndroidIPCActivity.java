@@ -1,6 +1,5 @@
 package com.linyang.study.advanced.android_ipc;
 
-import android.content.Intent;
 import android.view.View;
 
 import com.linyang.study.R;
@@ -9,7 +8,9 @@ import com.linyang.study.advanced.android_ipc.binder.BinderTestActivity;
 import com.linyang.study.advanced.android_ipc.binder_poll.BinderPoolActivity;
 import com.linyang.study.advanced.android_ipc.content_provider.ContentProviderActivity;
 import com.linyang.study.advanced.android_ipc.messenger.MessengerActivity;
+import com.linyang.study.advanced.android_ipc.socket.TCPClientActivity;
 import com.linyang.study.app.BaseActivity;
+import com.linyang.study.app.util.ArmsUtils;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -33,6 +34,8 @@ public class AndroidIPCActivity extends BaseActivity {
     AppCompatButton btnContentProvider;
     @BindView(R.id.btn_file)
     AppCompatButton btnFile;
+    @BindView(R.id.btn_socket)
+    AppCompatButton btnSocket;
 
     @Override
     public int getLayoutId() {
@@ -49,27 +52,31 @@ public class AndroidIPCActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.btn_aidl, R.id.btn_binder, R.id.btn_binder_pool, R.id.btn_messenger, R.id.btn_content_provider, R.id.btn_file})
+    @OnClick({R.id.btn_aidl, R.id.btn_binder, R.id.btn_binder_pool, R.id.btn_messenger, R.id.btn_content_provider, R.id.btn_file, R.id.btn_socket})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_aidl:
-                startActivity(new Intent(this, AIDLTestActivity.class));
+                ArmsUtils.startActivity(this, AIDLTestActivity.class);
                 break;
 
             case R.id.btn_binder:
-                startActivity(new Intent(this, BinderTestActivity.class));
+                ArmsUtils.startActivity(this, BinderTestActivity.class);
                 break;
 
             case R.id.btn_binder_pool:
-                startActivity(new Intent(this, BinderPoolActivity.class));
+                ArmsUtils.startActivity(this, BinderPoolActivity.class);
                 break;
 
             case R.id.btn_messenger:
-                startActivity(new Intent(this, MessengerActivity.class));
+                ArmsUtils.startActivity(this, MessengerActivity.class);
                 break;
 
             case R.id.btn_content_provider:
-                startActivity(new Intent(this, ContentProviderActivity.class));
+                ArmsUtils.startActivity(this, ContentProviderActivity.class);
+                break;
+
+            case R.id.btn_socket:
+                ArmsUtils.startActivity(this, TCPClientActivity.class);
                 break;
 
             case R.id.btn_file:

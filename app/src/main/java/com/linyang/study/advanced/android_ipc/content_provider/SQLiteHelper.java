@@ -13,13 +13,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "content_provider_test.db";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String TABLE_USER_NAME = "user";
-    public static final String TABLE_BOOK_NAME = "book";
+    static final String TABLE_USER_NAME = "user";
+    static final String TABLE_BOOK_NAME = "book";
 
     private static final String CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_USER_NAME + "(_id INTEGER PRIMARY KEY," + "name TEXT," + "sex INT)";
     private static final String CREATE_BOOK_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_BOOK_NAME + "(_id INTEGER PRIMARY KEY," + "name TEXT)";
 
-    public SQLiteHelper(Context context) {
+    SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

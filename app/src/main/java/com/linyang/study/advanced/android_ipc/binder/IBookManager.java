@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import java.util.List;
 
 /**
- * 描述:
+ * 描述:手动实现Binder
  * Created by fzJiang on 2019-1-24
  */
 public interface IBookManager extends IInterface {

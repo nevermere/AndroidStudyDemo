@@ -94,6 +94,7 @@
         <activity android:name=".advanced.android_ipc.binder.BinderTestActivity" />
         <activity android:name=".advanced.android_ipc.aidl.AIDLTestActivity" />
         <activity android:name=".advanced.android_ipc.binder_poll.BinderPoolActivity" />
+        <activity android:name=".advanced.android_ipc.socket.TCPClientActivity" />
 
         <!--自定义小部件服务-->
         <receiver
@@ -138,6 +139,11 @@
         <service
             android:name=".advanced.android_ipc.messenger.MessengerService"
             android:process=":remote_messenger" />
+
+        <!--TCP远程服务器-->
+        <service
+            android:name=".advanced.android_ipc.socket.TCPServerService"
+            android:process=":remote_tcp_server" />
 
     </application>
 

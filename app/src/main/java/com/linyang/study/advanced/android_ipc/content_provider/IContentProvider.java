@@ -8,7 +8,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
-import android.util.Log;
+
+import com.linyang.study.app.util.LogUtil;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,9 +20,7 @@ import androidx.annotation.Nullable;
  */
 public class IContentProvider extends ContentProvider {
 
-    private static final String TAG = IContentProvider.class.getSimpleName();
-
-    public static final String AUTHORITY = "com.linyang.aidldemo.server.provider";
+    public static final String AUTHORITY = "com.linyang.study.server.provider";
 
     public static final Uri USER_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/user");
     public static final Uri BOOK_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");
@@ -49,7 +48,7 @@ public class IContentProvider extends ContentProvider {
 
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-        Log.i(TAG, "-----query-----");
+        LogUtil.i("-----query-----");
 
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
@@ -60,19 +59,16 @@ public class IContentProvider extends ContentProvider {
 
     @Override
     public String getType(@NonNull Uri uri) {
-        Log.i(TAG, "-----getType-----");
-
+        LogUtil.i("-----getType-----");
         return null;
     }
 
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-
-
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             long count = mDatabase.insert(tableName, null, values);
-            Log.i(TAG, "-----insert-----" + count);
+            LogUtil.i("-----insert-----" + count);
 
             mContext.getContentResolver().notifyChange(uri, null);
         }
@@ -84,7 +80,7 @@ public class IContentProvider extends ContentProvider {
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             int count = mDatabase.delete(tableName, selection, selectionArgs);
-            Log.i(TAG, "-----delete-----" + count);
+            LogUtil.i("-----delete-----" + count);
 
             if (count > 0) {
                 mContext.getContentResolver().notifyChange(uri, null);
@@ -98,7 +94,7 @@ public class IContentProvider extends ContentProvider {
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             int count = mDatabase.update(tableName, values, selection, selectionArgs);
-            Log.i(TAG, "-----update-----" + count);
+            LogUtil.i("-----update-----" + count);
 
             if (count > 0) {
                 mContext.getContentResolver().notifyChange(uri, null);
