@@ -29,6 +29,7 @@
         <item>异步线程池</item>
         <item>IPC机制</item>
         <item>Glide</item>
+        <item>WebView</item>
     </string-array>
 
     <!--安卓动画插值器列表-->

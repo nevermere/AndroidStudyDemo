@@ -98,6 +98,7 @@
         <activity android:name=".advanced.android_ipc.binder_poll.BinderPoolActivity" />
         <activity android:name=".advanced.android_ipc.socket.TCPClientActivity" />
         <activity android:name=".other.glide.GlideTestActivity" />
+        <activity android:name=".primary.webview.WebViewActivity" />
 
         <!--自定义小部件服务-->
         <receiver
