@@ -41,22 +41,22 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     // Android Support
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.material:material:1.1.0-alpha02'
+    implementation 'com.google.android.material:material:1.1.0-alpha03'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.annotation:annotation:1.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // Android Navigation
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha09'
-    implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha09'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-beta02'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0-beta02'
     androidTestImplementation 'android.arch.navigation:navigation-testing:1.0.0-alpha08'
     // ButterKnife
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     // WorkManager
-    implementation 'android.arch.work:work-runtime:1.0.0-beta02'
+    implementation 'android.arch.work:work-runtime:1.0.0-rc01'
     implementation 'android.arch.work:work-firebase:1.0.0-alpha11'
-    androidTestImplementation 'android.arch.work:work-testing:1.0.0-beta02'
+    androidTestImplementation 'android.arch.work:work-testing:1.0.0-rc01'
     // Moshi Json解析库
     implementation 'com.squareup.moshi:moshi:1.8.0'
     // 开源动画库
@@ -92,5 +92,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     // DiskLruCache
     implementation 'com.jakewharton:disklrucache:2.0.2'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
 
 }

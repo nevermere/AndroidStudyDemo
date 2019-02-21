@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--作为app启动时的主题,防止白屏-->
+    <style name="AppTheme.Launch">
+        <item name="android:windowBackground">@drawable/test</item>
+    </style>
+
 </resources>

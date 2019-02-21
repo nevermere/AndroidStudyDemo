@@ -34,7 +34,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-        <activity android:name="com.linyang.study.VideoSplashActivity">
+        <activity
+            android:name="com.linyang.study.VideoSplashActivity"
+            android:theme="@style/AppTheme.Launch">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -95,6 +97,7 @@
         <activity android:name=".advanced.android_ipc.aidl.AIDLTestActivity" />
         <activity android:name=".advanced.android_ipc.binder_poll.BinderPoolActivity" />
         <activity android:name=".advanced.android_ipc.socket.TCPClientActivity" />
+        <activity android:name=".other.glide.GlideTestActivity" />
 
         <!--自定义小部件服务-->
         <receiver
