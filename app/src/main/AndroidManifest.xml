@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.linyang.study">
+    package="com.linyang.study"
+    android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -99,6 +100,7 @@
         <activity android:name=".advanced.android_ipc.socket.TCPClientActivity" />
         <activity android:name=".other.glide.GlideTestActivity" />
         <activity android:name=".primary.webview.WebViewActivity" />
+        <activity android:name=".primary.architecture_components.LifeObserverActivity" />
 
         <!--自定义小部件服务-->
         <receiver
