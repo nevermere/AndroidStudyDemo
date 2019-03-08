@@ -11,7 +11,7 @@ import android.os.RemoteException;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -97,7 +97,7 @@ public class MessengerActivity extends BaseActivity {
     public void onHandlerReceive(Message msg) {
         switch (msg.what) {
             case MessengerService.MESSAGE_RECEIVED:
-                LogUtil.i("Message from Messenger Server:" + msg.getData().toString());
+                L.i("Message from Messenger Server:" + msg.getData().toString());
                 break;
 
             default:

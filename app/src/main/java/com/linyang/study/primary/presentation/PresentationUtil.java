@@ -6,7 +6,7 @@ import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 /**
  * 描述:
@@ -32,7 +32,7 @@ public class PresentationUtil {
         mDisplayManager = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
         mDisplays = mDisplayManager.getDisplays();
 
-        LogUtil.i("获取屏幕数目：" + mDisplays.length);
+        L.i("获取屏幕数目：" + mDisplays.length);
 
         if (mDisplays.length > 1 && mUserPresentation == null) {
             // displays[1]是副屏

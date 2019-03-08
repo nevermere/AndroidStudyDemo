@@ -14,7 +14,7 @@ import com.linyang.aidl.IUserInterface;
 import com.linyang.aidl.IUserListener;
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -56,15 +56,15 @@ public class AIDLTestActivity extends BaseActivity {
                 // 设置死亡代理
                 mIUserInterface.asBinder().linkToDeath(mDeathRecipient, 0);
 
-                LogUtil.i("AIDL远程服务连接成功");
+                L.i("AIDL远程服务连接成功");
             } catch (RemoteException e) {
-                LogUtil.e("AIDL远程服务连接失败：" + e.getMessage());
+                L.e("AIDL远程服务连接失败：" + e.getMessage());
             }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtil.i("AIDL远程服务连接断开");
+            L.i("AIDL远程服务连接断开");
             mIUserInterface = null;
         }
     };
@@ -74,7 +74,7 @@ public class AIDLTestActivity extends BaseActivity {
 
         @Override
         public void onUserLogin(IUser user) {
-            LogUtil.i("用户登录操作:" + user.toString());
+            L.i("用户登录操作:" + user.toString());
         }
     };
 
@@ -83,7 +83,7 @@ public class AIDLTestActivity extends BaseActivity {
 
         @Override
         public void binderDied() {
-            LogUtil.i("连接已断开");
+            L.i("连接已断开");
             if (mIUserInterface == null) {
                 return;
             }
@@ -141,7 +141,7 @@ public class AIDLTestActivity extends BaseActivity {
                 if (mIUserInterface != null) {
                     try {
                         IResult result = mIUserInterface.registerUser(new IUser("用户001", "12345678"));
-                        LogUtil.i("用户注册结果：" + result.toString());
+                        L.i("用户注册结果：" + result.toString());
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -152,7 +152,7 @@ public class AIDLTestActivity extends BaseActivity {
                 if (mIUserInterface != null) {
                     try {
                         IResult result = mIUserInterface.login("用户001", "12345678");
-                        LogUtil.i("用户登录结果:" + result.toString());
+                        L.i("用户登录结果:" + result.toString());
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -163,7 +163,7 @@ public class AIDLTestActivity extends BaseActivity {
                 if (mIUserInterface != null) {
                     try {
                         IResult result = mIUserInterface.getUserInfo("000000001");
-                        LogUtil.i("用户信息：" + result.toString());
+                        L.i("用户信息：" + result.toString());
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }

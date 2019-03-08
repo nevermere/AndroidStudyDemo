@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 import com.linyang.study.app.util.StringUtil;
 
 import java.io.BufferedReader;
@@ -64,12 +64,12 @@ public class TCPServerService extends Service {
 
             @Override
             public void onNext(Boolean aBoolean) {
-                LogUtil.i("初始化服务成功：" + aBoolean);
+                L.i("初始化服务成功：" + aBoolean);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtil.i("初始化服务失败：" + e.getMessage());
+                L.i("初始化服务失败：" + e.getMessage());
             }
 
             @Override
@@ -126,9 +126,9 @@ public class TCPServerService extends Service {
             try {
                 mServerSocket = new ServerSocket(POST);
                 emitter.onNext(true);
-                LogUtil.i("初始化服务成功：" + HOST_ADDR + ":" + POST);
+                L.i("初始化服务成功：" + HOST_ADDR + ":" + POST);
             } catch (IOException e) {
-                LogUtil.e("初始化服务失败：" + HOST_ADDR + ":" + POST + "-----" + e.getMessage());
+                L.e("初始化服务失败：" + HOST_ADDR + ":" + POST + "-----" + e.getMessage());
                 emitter.onNext(false);
             }
             emitter.onComplete();
@@ -161,9 +161,9 @@ public class TCPServerService extends Service {
             try {
                 mServerSocket.close();
                 isServerStarted = false;
-                LogUtil.i("服务已关闭：" + HOST_ADDR + ":" + POST);
+                L.i("服务已关闭：" + HOST_ADDR + ":" + POST);
             } catch (IOException e) {
-                LogUtil.e("服务关闭失败：" + HOST_ADDR + ":" + POST + "-----" + e.getMessage());
+                L.e("服务关闭失败：" + HOST_ADDR + ":" + POST + "-----" + e.getMessage());
             }
         }
         if (mExecutorService != null) {
@@ -184,7 +184,7 @@ public class TCPServerService extends Service {
             BufferedReader bufferedReader = null;
             BufferedWriter bufferedWriter = null;
             try {
-                LogUtil.i("客户端连接到服务：" + mSocket.toString() + "，开始监听：" + StringUtil.simpleDateFormat(System.currentTimeMillis()));
+                L.i("客户端连接到服务：" + mSocket.toString() + "，开始监听：" + StringUtil.simpleDateFormat(System.currentTimeMillis()));
 
                 bufferedReader = new BufferedReader(new InputStreamReader(mSocket.getInputStream()));
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(mSocket.getOutputStream()));
@@ -195,10 +195,10 @@ public class TCPServerService extends Service {
                     index = new Random().nextInt(MESSAGE.length);
                     bufferedWriter.write(MESSAGE[index].concat("\r\n"));
                     bufferedWriter.flush();
-                    LogUtil.i("收到客户端消息：" + message + "，回复消息：" + MESSAGE[index]);
+                    L.i("收到客户端消息：" + message + "，回复消息：" + MESSAGE[index]);
                 }
             } catch (IOException e) {
-                LogUtil.i("客户端：" + mSocket.toString() + "，监听异常：" + e.getMessage());
+                L.i("客户端：" + mSocket.toString() + "，监听异常：" + e.getMessage());
 
             } finally {
                 try {

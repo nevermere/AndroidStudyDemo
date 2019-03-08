@@ -1,6 +1,6 @@
-package com.linyang.study.primary.android_thread.metting;
+package com.linyang.study.primary.android_multi_thread.metting;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -17,18 +17,18 @@ public class VideoConference implements Runnable {
         this.mCountDownLatch = new CountDownLatch(count);
     }
 
-    void arrive(String name) {
-        LogUtil.i(name + "号参会人员到达会议室");
+    public void arrive(String name) {
+        L.i(name + "号参会人员到达会议室");
         mCountDownLatch.countDown();
-        LogUtil.i("剩余人数：" + mCountDownLatch.getCount());
+        L.i("剩余人数：" + mCountDownLatch.getCount());
     }
 
     @Override
     public void run() {
         try {
-            LogUtil.i("召开会议，参会人数：" + mCountDownLatch.getCount());
+            L.i("召开会议，参会人数：" + mCountDownLatch.getCount());
             mCountDownLatch.await();
-            LogUtil.i("参会人员到齐，会议开始");
+            L.i("参会人员到齐，会议开始");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

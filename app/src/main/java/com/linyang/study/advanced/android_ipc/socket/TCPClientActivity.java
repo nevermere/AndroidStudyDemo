@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 import com.linyang.study.app.util.RxSchedulers;
 
 import java.io.BufferedReader;
@@ -97,12 +97,12 @@ public class TCPClientActivity extends BaseActivity {
                             @Override
                             public void onNext(Boolean connected) {
                                 isConnected = connected;
-                                LogUtil.i("连接服务器成功：" + isConnected);
+                                L.i("连接服务器成功：" + isConnected);
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                LogUtil.e("连接服务器失败：" + e.getMessage());
+                                L.e("连接服务器失败：" + e.getMessage());
                             }
 
                             @Override
@@ -124,12 +124,12 @@ public class TCPClientActivity extends BaseActivity {
 
                             @Override
                             public void onNext(String response) {
-                                LogUtil.i("收到回复：" + response);
+                                L.i("收到回复：" + response);
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                LogUtil.e("发送失败：" + e.getMessage());
+                                L.e("发送失败：" + e.getMessage());
                             }
 
                             @Override
@@ -188,7 +188,7 @@ public class TCPClientActivity extends BaseActivity {
     private Observable<String> sendAndRead(String message) {
         return send(message)
                 .skipWhile(success -> { // 如果发送失败,则不进行后续操作
-                    LogUtil.i("消息：" + message + "---发送" + (success ? "成功" : "失败"));
+                    L.i("消息：" + message + "---发送" + (success ? "成功" : "失败"));
                     return !success;
                 })
                 .compose(read())

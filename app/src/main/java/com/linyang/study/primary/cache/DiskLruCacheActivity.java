@@ -7,7 +7,7 @@ import android.view.View;
 import com.jakewharton.disklrucache.DiskLruCache;
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -91,7 +91,7 @@ public class DiskLruCacheActivity extends BaseActivity {
         Observable.create((ObservableOnSubscribe<Boolean>) emitter -> {
             // 以MD5加密，作为存储key值
             String md5Key = MD5Util.getMD5String(url);
-            LogUtil.i("md5Key:" + md5Key);
+            L.i("md5Key:" + md5Key);
 
             DiskLruCache.Editor editor = mDiskCacheManager.getEditor(md5Key);
             if (editor != null) {
@@ -133,12 +133,12 @@ public class DiskLruCacheActivity extends BaseActivity {
 
                     @Override
                     public void onNext(Boolean aBoolean) {
-                        LogUtil.i("-----下载并写入缓存成功--------" + aBoolean);
+                        L.i("-----下载并写入缓存成功--------" + aBoolean);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.e("-----下载并写入缓存失败--------" + e.getMessage());
+                        L.e("-----下载并写入缓存失败--------" + e.getMessage());
                     }
 
                     @Override
@@ -157,7 +157,7 @@ public class DiskLruCacheActivity extends BaseActivity {
         Observable.create((ObservableOnSubscribe<Bitmap>) emitter -> {
             // 以MD5加密，作为存储key值
             String md5Key = MD5Util.getMD5String(key);
-//            LogUtil.i("md5Key:" + md5Key);
+//            L.i("md5Key:" + md5Key);
 
             DiskLruCache.Snapshot snapshot = mDiskCacheManager.getSnapshot(md5Key);
             if (snapshot != null) {
@@ -184,7 +184,7 @@ public class DiskLruCacheActivity extends BaseActivity {
 
                     @Override
                     public void onNext(Bitmap bitmap) {
-                        LogUtil.i("-----读取缓存--------" + (bitmap == null ? "失败" : "成功"));
+                        L.i("-----读取缓存--------" + (bitmap == null ? "失败" : "成功"));
                         if (bitmap != null) {
                             ivImageCache.setImageBitmap(bitmap);
                         }
@@ -192,7 +192,7 @@ public class DiskLruCacheActivity extends BaseActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.e("-----读取缓存失败--------" + e.getMessage());
+                        L.e("-----读取缓存失败--------" + e.getMessage());
                     }
 
                     @Override
@@ -213,7 +213,7 @@ public class DiskLruCacheActivity extends BaseActivity {
             if (lruCache != null) {
                 // 以MD5加密，作为存储key值
                 String md5Key = MD5Util.getMD5String(key);
-//                LogUtil.i("md5Key:" + md5Key);
+//                L.i("md5Key:" + md5Key);
                 emitter.onNext(lruCache.remove(md5Key));
             } else {
                 emitter.onError(new Throwable("no DiskLruCache"));
@@ -231,12 +231,12 @@ public class DiskLruCacheActivity extends BaseActivity {
 
                     @Override
                     public void onNext(Boolean aBoolean) {
-                        LogUtil.i("-----清除缓存--------" + (aBoolean ? "失败" : "成功"));
+                        L.i("-----清除缓存--------" + (aBoolean ? "失败" : "成功"));
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.e("-----清除缓存失败--------" + e.getMessage());
+                        L.e("-----清除缓存失败--------" + e.getMessage());
                     }
 
                     @Override

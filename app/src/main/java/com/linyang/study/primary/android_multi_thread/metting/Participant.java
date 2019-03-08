@@ -1,4 +1,4 @@
-package com.linyang.study.primary.android_thread.metting;
+package com.linyang.study.primary.android_multi_thread.metting;
 
 
 import java.util.concurrent.TimeUnit;

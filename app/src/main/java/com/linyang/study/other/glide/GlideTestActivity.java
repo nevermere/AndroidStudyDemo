@@ -53,9 +53,9 @@ public class GlideTestActivity extends BaseActivity {
 
     @OnClick(R.id.bt_load)
     public void onViewClicked() {
-        Glide.with(this)
+        Glide.with(ivImage.getContext())
                 .setDefaultRequestOptions(mRequestOptions)
-                .load(URL_IMAGE)
+                .load(URL_GIF)
                 .listener(new RequestListener<Drawable>() {
 
                     @Override

@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import com.jakewharton.disklrucache.DiskLruCache;
 import com.linyang.study.R;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.io.OutputStream;
 
@@ -96,7 +96,7 @@ public class PhotoWallAdapter extends ArrayAdapter<String> {
             if (cacheBitmap == null) {
                 // 以MD5加密，作为存储key值
                 String md5Key = MD5Util.getMD5String(imageUrl);
-//                LogUtil.i("md5Key:" + md5Key);
+//                L.i("md5Key:" + md5Key);
 
                 // 执行下载操作并存入缓存
                 DiskLruCache.Editor editor = mDiskCacheManager.getEditor(md5Key);
@@ -148,13 +148,13 @@ public class PhotoWallAdapter extends ArrayAdapter<String> {
                     @Override
                     public void onNext(Bitmap bitmap) {
                         imageView.setImageBitmap(bitmap);
-                        LogUtil.e("加载成功:");
+                        L.e("加载成功:");
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         imageView.setImageResource(R.drawable.empty_photo);
-                        LogUtil.e("加载失败:" + e.getMessage());
+                        L.e("加载失败:" + e.getMessage());
                     }
 
                     @Override

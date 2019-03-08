@@ -1,15 +1,15 @@
-package com.linyang.study.primary.android_thread;
+package com.linyang.study.primary.android_multi_thread;
 
 import android.view.View;
 
 import com.linyang.study.R;
-import com.linyang.study.primary.android_thread.checker.BaseChecker;
-import com.linyang.study.primary.android_thread.checker.DriveChecker;
-import com.linyang.study.primary.android_thread.checker.FileDiskChecker;
-import com.linyang.study.primary.android_thread.checker.MemoryChecker;
-import com.linyang.study.primary.android_thread.checker.StartUpTask;
-import com.linyang.study.primary.android_thread.metting.Participant;
-import com.linyang.study.primary.android_thread.metting.VideoConference;
+import com.linyang.study.primary.android_multi_thread.checker.BaseChecker;
+import com.linyang.study.primary.android_multi_thread.checker.DriveChecker;
+import com.linyang.study.primary.android_multi_thread.checker.FileDiskChecker;
+import com.linyang.study.primary.android_multi_thread.checker.MemoryChecker;
+import com.linyang.study.primary.android_multi_thread.checker.StartUpTask;
+import com.linyang.study.primary.android_multi_thread.metting.Participant;
+import com.linyang.study.primary.android_multi_thread.metting.VideoConference;
 import com.linyang.study.app.BaseActivity;
 
 import java.util.ArrayList;
@@ -70,7 +70,6 @@ public class CountDownLatchActivity extends BaseActivity {
                 break;
         }
     }
-
 
     /**
      * 开机自检

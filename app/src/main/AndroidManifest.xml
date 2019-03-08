@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.linyang.study"
-    android:sharedUserId="android.uid.system">
+    package="com.linyang.study">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 显示系统窗口权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- 在 屏幕最顶部显示addview-->
+    <!-- 在屏幕最顶部显示addview-->
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <!--Binder Service访问权限-->
     <uses-permission android:name="com.linyang.permission.ACCESS_BOOK_SERVICE" />
@@ -89,8 +88,8 @@
         <activity android:name=".primary.cache.PhotoWallActivity" />
         <activity android:name=".primary.io.IOActivity" />
         <activity android:name=".primary.presentation.PresentationActivity" />
-        <activity android:name=".primary.android_thread.AsyncThreadPoolActivity" />
-        <activity android:name=".primary.android_thread.CountDownLatchActivity" />
+        <activity android:name=".primary.android_multi_thread.AsyncThreadPoolActivity" />
+        <activity android:name=".primary.android_multi_thread.CountDownLatchActivity" />
         <activity android:name=".advanced.android_ipc.AndroidIPCActivity" />
         <activity android:name=".advanced.android_ipc.messenger.MessengerActivity" />
         <activity android:name=".advanced.android_ipc.content_provider.ContentProviderActivity" />
@@ -101,6 +100,8 @@
         <activity android:name=".other.glide.GlideTestActivity" />
         <activity android:name=".primary.webview.WebViewActivity" />
         <activity android:name=".primary.architecture_components.LifeObserverActivity" />
+        <activity android:name=".primary.android_multi_thread.HandlerTestActivity" />
+        <activity android:name=".primary.android_multi_thread.async_task.AsyncTaskActivity" />
 
         <!--自定义小部件服务-->
         <receiver
@@ -129,7 +130,7 @@
         <!--AIDL远程服务器-->
         <service
             android:name="com.linyang.aidl.AIDLService"
-            android:process=":remote_aidl" />
+            android:process="com.remote_aidl" />
 
         <!--Binder远程服务器-->
         <service

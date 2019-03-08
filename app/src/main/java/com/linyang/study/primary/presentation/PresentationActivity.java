@@ -3,7 +3,7 @@ package com.linyang.study.primary.presentation;
 import android.os.Bundle;
 
 import com.linyang.study.R;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +52,6 @@ public class PresentationActivity extends AppCompatActivity implements UserPrese
 
     @Override
     public void onReceive(String rev) {
-        LogUtil.i("接收到第二屏幕回复消息");
+        L.i("接收到第二屏幕回复消息");
     }
 }

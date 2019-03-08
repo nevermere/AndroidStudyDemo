@@ -9,7 +9,7 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 
 import com.linyang.study.app.util.GsonUtil;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.annotation.Nullable;
 
@@ -27,7 +27,7 @@ public class AIDLService extends Service {
 
         @Override
         public IResult registerUser(IUser user) {
-            LogUtil.i("新用户注册:" + user.toString());
+            L.i("新用户注册:" + user.toString());
             user.setUserID("00000000001");
             IResult result = new IResult();
             result.setCode(0);
@@ -37,7 +37,7 @@ public class AIDLService extends Service {
 
         @Override
         public IResult login(String userName, String password) throws RemoteException {
-            LogUtil.i("新用户登录:" + userName + ":" + password);
+            L.i("新用户登录:" + userName + ":" + password);
             IUser user = new IUser("00000000001", userName, password, "2019-1-24 12:00:00");
             IResult result = new IResult();
             result.setCode(0);
@@ -57,7 +57,7 @@ public class AIDLService extends Service {
 
         @Override
         public IResult getUserInfo(String userID) {
-            LogUtil.i("获取用户信息:" + userID);
+            L.i("获取用户信息:" + userID);
             IUser user = new IUser(userID, "用户001", "12345678", "2019-1-24 12:00:00");
             IResult result = new IResult();
             result.setCode(0);
@@ -67,13 +67,13 @@ public class AIDLService extends Service {
 
         @Override
         public void registerListener(IUserListener listener) {
-            LogUtil.i("注册监听:" + mCallbackList.getRegisteredCallbackCount());
+            L.i("注册监听:" + mCallbackList.getRegisteredCallbackCount());
             mCallbackList.register(listener);
         }
 
         @Override
         public void unRegisterListener(IUserListener listener) {
-            LogUtil.i("解除注册监听:" + mCallbackList.getRegisteredCallbackCount());
+            L.i("解除注册监听:" + mCallbackList.getRegisteredCallbackCount());
             mCallbackList.unregister(listener);
         }
     };
@@ -92,7 +92,7 @@ public class AIDLService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         int check = checkCallingOrSelfPermission(ACCESS_AIDL_SERVICE);
-        LogUtil.i("权限检查：" + check);
+        L.i("权限检查：" + check);
         if (check == PackageManager.PERMISSION_DENIED) {
             return null;
         }

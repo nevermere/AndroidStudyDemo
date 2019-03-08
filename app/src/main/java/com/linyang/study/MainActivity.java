@@ -16,7 +16,9 @@ import com.linyang.study.other.WindowManagerActivity;
 import com.linyang.study.other.glide.GlideTestActivity;
 import com.linyang.study.other.jetpack.activity.JetPackMainActivity;
 import com.linyang.study.other.moshi.MoshiActivity;
-import com.linyang.study.primary.android_thread.AsyncThreadPoolActivity;
+import com.linyang.study.primary.android_multi_thread.AsyncThreadPoolActivity;
+import com.linyang.study.primary.android_multi_thread.HandlerTestActivity;
+import com.linyang.study.primary.android_multi_thread.async_task.AsyncTaskActivity;
 import com.linyang.study.primary.animation.AnimationActivity;
 import com.linyang.study.primary.architecture_components.LifeObserverActivity;
 import com.linyang.study.primary.cache.DiskLruCacheActivity;
@@ -171,15 +173,20 @@ public class MainActivity extends BaseActivity implements BaseRecycleAdapter.OnR
                 startActivity(new Intent(this, AndroidIPCActivity.class));
                 break;
             case 25:
-                startActivity(new Intent(this, GlideTestActivity.class));
+                startActivity(new Intent(this, AsyncTaskActivity.class));
                 break;
             case 26:
-                startActivity(new Intent(this, WebViewActivity.class));
+                startActivity(new Intent(this, HandlerTestActivity.class));
                 break;
             case 27:
+                startActivity(new Intent(this, GlideTestActivity.class));
+                break;
+            case 28:
+                startActivity(new Intent(this, WebViewActivity.class));
+                break;
+            case 29:
                 startActivity(new Intent(this, LifeObserverActivity.class));
                 break;
-
         }
     }
 }

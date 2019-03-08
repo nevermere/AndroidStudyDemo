@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.view.View;
 
 import com.linyang.study.R;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -105,7 +105,7 @@ public class IOActivity extends AppCompatActivity {
             }
         }
 
-        LogUtil.i("----------字节流--读--结束--耗时:" + (System.currentTimeMillis() - time));
+        L.i("----------字节流--读--结束--耗时:" + (System.currentTimeMillis() - time));
     }
 
     private void readWriteFileByCharacter() {
@@ -134,7 +134,7 @@ public class IOActivity extends AppCompatActivity {
             }
         }
 
-        LogUtil.i("----------字符流--读--结束--耗时:" + (System.currentTimeMillis() - time));
+        L.i("----------字符流--读--结束--耗时:" + (System.currentTimeMillis() - time));
     }
 
     private void readWriteFileByBuffer() {
@@ -163,7 +163,7 @@ public class IOActivity extends AppCompatActivity {
             }
         }
 
-        LogUtil.i("----------缓冲流--读--结束--耗时:" + (System.currentTimeMillis() - time));
+        L.i("----------缓冲流--读--结束--耗时:" + (System.currentTimeMillis() - time));
     }
 
     private void byte2buffer() {
@@ -180,7 +180,7 @@ public class IOActivity extends AppCompatActivity {
             while ((temp = bufferedReader.readLine()) != null) {
                 stringBuilder.append(temp);
             }
-            LogUtil.i(stringBuilder.toString());
+            L.i(stringBuilder.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

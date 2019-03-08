@@ -8,7 +8,7 @@ import com.linyang.binder_poll.IComputer;
 import com.linyang.binder_poll.ISecurityCenter;
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -70,7 +70,7 @@ public class BinderPoolActivity extends BaseActivity {
                 if (mISecurityCenter != null) {
                     try {
                         String encrypt = mISecurityCenter.encrypt("hello world");
-                        LogUtil.i("encrypt:" + encrypt);
+                        L.i("encrypt:" + encrypt);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -86,7 +86,7 @@ public class BinderPoolActivity extends BaseActivity {
                 if (mIComputer != null) {
                     try {
                         int sum = mIComputer.add(1, 2);
-                        LogUtil.i("sum:" + sum);
+                        L.i("sum:" + sum);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -102,7 +102,7 @@ public class BinderPoolActivity extends BaseActivity {
         public void run() {
             super.run();
             mBinderPool = BinderPool.getInstance(BinderPoolActivity.this);
-            LogUtil.i("初始化Binder池:" + (mBinderPool == null ? "失败" : "成功"));
+            L.i("初始化Binder池:" + (mBinderPool == null ? "失败" : "成功"));
         }
     }
 }

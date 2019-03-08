@@ -42,37 +42,37 @@ public class App extends Application {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             mStack.add(activity);
-//            LogUtil.i("onActivityCreated:" + activity.toString());
+//            L.i("onActivityCreated:" + activity.toString());
         }
 
         @Override
         public void onActivityStarted(Activity activity) {
-//            LogUtil.i("onActivityStarted:" + activity.toString());
+//            L.i("onActivityStarted:" + activity.toString());
         }
 
         @Override
         public void onActivityResumed(Activity activity) {
-//            LogUtil.i("onActivityResumed:" + activity.toString());
+//            L.i("onActivityResumed:" + activity.toString());
         }
 
         @Override
         public void onActivityPaused(Activity activity) {
-//            LogUtil.i("onActivityPaused:" + activity.toString());
+//            L.i("onActivityPaused:" + activity.toString());
         }
 
         @Override
         public void onActivityStopped(Activity activity) {
-//            LogUtil.i("onActivityStopped:" + activity.toString());
+//            L.i("onActivityStopped:" + activity.toString());
         }
 
         @Override
         public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-//            LogUtil.i("onActivitySaveInstanceState:" + activity.toString());
+//            L.i("onActivitySaveInstanceState:" + activity.toString());
         }
 
         @Override
         public void onActivityDestroyed(Activity activity) {
-//            LogUtil.i("onActivityDestroyed:" + activity.toString());
+//            L.i("onActivityDestroyed:" + activity.toString());
             mStack.remove(activity);
         }
     }

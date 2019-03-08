@@ -1,4 +1,4 @@
-package com.linyang.study.primary.android_thread.checker;
+package com.linyang.study.primary.android_multi_thread.checker;
 
 /**
  * 描述:

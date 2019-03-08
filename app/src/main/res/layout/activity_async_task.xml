@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_start_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始下载" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_cancel_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消下载" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/download_progress"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:max="100" />
+
+</LinearLayout>

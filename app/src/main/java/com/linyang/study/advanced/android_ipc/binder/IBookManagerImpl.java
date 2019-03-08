@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -41,20 +41,20 @@ public class IBookManagerImpl extends Binder implements IBookManager {
 
     @Override
     public List<Book> getBookList() {
-        LogUtil.i("--------get  BookList--------" + mBookList.size());
+        L.i("--------get  BookList--------" + mBookList.size());
         return mBookList;
     }
 
     @Override
     public void addBook(Book book) {
-        LogUtil.i("--------add  Book--------" + mBookList.size());
+        L.i("--------add  Book--------" + mBookList.size());
         mBookList.add(book);
     }
 
     @Override
     public void registerListener(IBookListener listener) {
         if (listener != null) {
-            LogUtil.i("--------registerListener--------");
+            L.i("--------registerListener--------");
             mRemoteCallbackList.register(listener);
         }
     }
@@ -62,7 +62,7 @@ public class IBookManagerImpl extends Binder implements IBookManager {
     @Override
     public void unRegisterListener(IBookListener listener) {
         if (listener != null) {
-            LogUtil.i("--------unRegisterListener--------");
+            L.i("--------unRegisterListener--------");
             mRemoteCallbackList.unregister(listener);
         }
     }

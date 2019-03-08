@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.linyang.study.BuildConfig;
 
-public class LogUtil {
+public class L {
 
     private static boolean isDebug = BuildConfig.DEBUG;
 

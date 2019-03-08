@@ -9,7 +9,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 
 import com.linyang.binder_poll.IBinderPool;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -33,7 +33,7 @@ public class BinderPool {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtil.i("---------onServiceConnected---------");
+            L.i("---------onServiceConnected---------");
 
             try {
                 mIBinderPool = IBinderPool.Stub.asInterface(service);
@@ -48,7 +48,7 @@ public class BinderPool {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mIBinderPool = null;
-            LogUtil.i("---------onServiceDisconnected---------");
+            L.i("---------onServiceDisconnected---------");
         }
     };
 
@@ -56,7 +56,7 @@ public class BinderPool {
 
         @Override
         public void binderDied() {
-            LogUtil.i("---------binderDied---------");
+            L.i("---------binderDied---------");
 
             if (mIBinderPool == null) {
                 return;

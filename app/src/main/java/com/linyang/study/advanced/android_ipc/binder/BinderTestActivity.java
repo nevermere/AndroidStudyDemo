@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.util.List;
 
@@ -46,13 +46,13 @@ public class BinderTestActivity extends BaseActivity {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtil.i("Binder Service 已连接");
+            L.i("Binder Service 已连接");
             mIBookManager = IBookManagerImpl.asInterface(service);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtil.i("Binder Service 连接断开");
+            L.i("Binder Service 连接断开");
             mIBookManager = null;
         }
     };
@@ -66,7 +66,7 @@ public class BinderTestActivity extends BaseActivity {
 
         @Override
         public void onNewBookArrived(Book book) {
-            LogUtil.i("新书到达:" + book.toString());
+            L.i("新书到达:" + book.toString());
         }
     };
 
@@ -157,7 +157,7 @@ public class BinderTestActivity extends BaseActivity {
                     try {
                         List<Book> list = mIBookManager.getBookList();
                         for (Book book : list) {
-                            LogUtil.i("获取到的书籍:" + list.toString());
+                            L.i("获取到的书籍:" + list.toString());
                         }
                     } catch (RemoteException e) {
                         e.printStackTrace();

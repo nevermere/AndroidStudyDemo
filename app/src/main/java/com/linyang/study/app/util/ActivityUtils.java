@@ -41,7 +41,7 @@ public class ActivityUtils {
         }
         Activity activity = activityStack.lastElement();
 
-        //LogUtil.i("get current activity:" + activity.getClass().getSimpleName());
+        //L.i("get current activity:" + activity.getClass().getSimpleName());
         return activity;
     }
 
@@ -66,7 +66,7 @@ public class ActivityUtils {
         if (activityStack == null) {
             activityStack = new Stack<Activity>();
         }
-        //LogUtil.i("push stack activity:" + activity.getClass().getSimpleName());
+        //L.i("push stack activity:" + activity.getClass().getSimpleName());
         activityStack.add(activity);
     }
 
@@ -79,7 +79,7 @@ public class ActivityUtils {
     public void popActivity(Activity activity) {
         if (activity != null) {
             activity.finish();
-            //LogUtil.i("remove current activity:" + activity.getClass().getSimpleName());
+            //L.i("remove current activity:" + activity.getClass().getSimpleName());
             activityStack.remove(activity);
         }
     }

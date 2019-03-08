@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,7 +48,7 @@ public class IContentProvider extends ContentProvider {
 
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-        LogUtil.i("-----query-----");
+        L.i("-----query-----");
 
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
@@ -59,7 +59,7 @@ public class IContentProvider extends ContentProvider {
 
     @Override
     public String getType(@NonNull Uri uri) {
-        LogUtil.i("-----getType-----");
+        L.i("-----getType-----");
         return null;
     }
 
@@ -68,7 +68,7 @@ public class IContentProvider extends ContentProvider {
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             long count = mDatabase.insert(tableName, null, values);
-            LogUtil.i("-----insert-----" + count);
+            L.i("-----insert-----" + count);
 
             mContext.getContentResolver().notifyChange(uri, null);
         }
@@ -80,7 +80,7 @@ public class IContentProvider extends ContentProvider {
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             int count = mDatabase.delete(tableName, selection, selectionArgs);
-            LogUtil.i("-----delete-----" + count);
+            L.i("-----delete-----" + count);
 
             if (count > 0) {
                 mContext.getContentResolver().notifyChange(uri, null);
@@ -94,7 +94,7 @@ public class IContentProvider extends ContentProvider {
         String tableName = getTableName(uri);
         if (!TextUtils.isEmpty(tableName)) {
             int count = mDatabase.update(tableName, values, selection, selectionArgs);
-            LogUtil.i("-----update-----" + count);
+            L.i("-----update-----" + count);
 
             if (count > 0) {
                 mContext.getContentResolver().notifyChange(uri, null);

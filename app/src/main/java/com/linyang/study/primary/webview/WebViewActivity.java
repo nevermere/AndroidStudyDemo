@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import butterknife.BindView;
 
@@ -104,13 +104,13 @@ public class WebViewActivity extends BaseActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            LogUtil.i("onPageStarted:" + url);
+            L.i("onPageStarted:" + url);
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            LogUtil.i("onPageFinished:" + url);
+            L.i("onPageFinished:" + url);
         }
 
         @Override
@@ -124,7 +124,7 @@ public class WebViewActivity extends BaseActivity {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             super.onProgressChanged(view, newProgress);
-            LogUtil.i("onProgressChanged:" + newProgress);
+            L.i("onProgressChanged:" + newProgress);
         }
     }
 }

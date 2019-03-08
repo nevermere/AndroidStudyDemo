@@ -41,32 +41,21 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     // Android Support
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.material:material:1.1.0-alpha03'
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.1'
+    implementation 'androidx.annotation:annotation:1.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // Android Navigation
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0-beta02'
-    implementation 'android.arch.navigation:navigation-ui:1.0.0-beta02'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-rc02'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0-rc02'
     androidTestImplementation 'android.arch.navigation:navigation-testing:1.0.0-alpha08'
     // ButterKnife
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
-    // WorkManager
-    implementation 'android.arch.work:work-runtime:1.0.0-rc01'
-    implementation 'android.arch.work:work-firebase:1.0.0-alpha11'
-    androidTestImplementation 'android.arch.work:work-testing:1.0.0-rc01'
-    // Moshi Json解析库
-    implementation 'com.squareup.moshi:moshi:1.8.0'
-    // 开源动画库
-    implementation 'com.google.code.gson:gson:2.8.4'
-    // 第三方Drawer
-    implementation 'com.ikimuhendis:ldrawer:0.1'
-    implementation 'com.mikepenz:materialdrawer:6.1.1'
-    implementation files('libs/nineoldandroids-2.4.0.jar')
-    implementation project(':android-skin-loader-lib')
-    // dagger-android
+    // 分包加载，解决65535问题
+    implementation 'androidx.multidex:multidex:2.0.1'
+    // Dagger2
 //    implementation 'com.google.dagger:dagger-android:2.14.1'
 //    implementation 'com.google.dagger:dagger-android-support:2.14.1'
 //    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
@@ -88,14 +77,24 @@ dependencies {
     // OKHttp3
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     implementation 'com.facebook.stetho:stetho:1.5.0'
-    // 65535
-    implementation 'androidx.multidex:multidex:2.0.1'
     // DiskLruCache
     implementation 'com.jakewharton:disklrucache:2.0.2'
-    // Glide
+    // Glide图片加载开源库
     implementation 'com.github.bumptech.glide:glide:4.4.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
-
+    // WorkManager
+    implementation 'android.arch.work:work-runtime:1.0.0-rc02'
+    implementation 'android.arch.work:work-firebase:1.0.0-alpha11'
+    androidTestImplementation 'android.arch.work:work-testing:1.0.0-rc02'
+    // Moshi Json解析库
+    implementation 'com.squareup.moshi:moshi:1.8.0'
+    // 开源动画库
+    implementation 'com.google.code.gson:gson:2.8.4'
+    // 第三方Drawer
+    implementation 'com.ikimuhendis:ldrawer:0.1'
+    implementation 'com.mikepenz:materialdrawer:6.1.1'
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    implementation project(':android-skin-loader-lib')
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:1.1.1"
     // alternatively - just ViewModel

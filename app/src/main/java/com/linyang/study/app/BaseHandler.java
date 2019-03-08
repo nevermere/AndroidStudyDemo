@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.linyang.study.app.inter.IView;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import java.lang.ref.WeakReference;
 
@@ -30,7 +30,7 @@ public class BaseHandler extends Handler {
                 || (view instanceof BaseFragment && !((BaseFragment) view).isRemoving()))) {
             view.onHandlerReceive(msg);
         } else {
-            LogUtil.i("----------不处理----------");
+            L.i("----------不处理----------");
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.linyang.study.primary.architecture_components;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -14,31 +14,31 @@ public class ActivityLifeObserver implements LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void onActivityCreate() {
-        LogUtil.i("onActivityCreate()");
+        L.i("onActivityCreate()");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     public void onActivityStart() {
-        LogUtil.i("onActivityStart()");
+        L.i("onActivityStart()");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     public void onActivityResume() {
-        LogUtil.i("onActivityResume()");
+        L.i("onActivityResume()");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     public void onActivityPause() {
-        LogUtil.i("onActivityPause()");
+        L.i("onActivityPause()");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     public void onActivityStop() {
-        LogUtil.i("onActivityStop()");
+        L.i("onActivityStop()");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void onActivityDestroy() {
-        LogUtil.i("onActivityDestroy()");
+        L.i("onActivityDestroy()");
     }
 }

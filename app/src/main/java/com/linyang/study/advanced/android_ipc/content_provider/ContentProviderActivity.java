@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.appcompat.widget.AppCompatButton;
 import butterknife.BindView;
@@ -75,7 +75,7 @@ public class ContentProviderActivity extends BaseActivity {
 
     private void deleteBook() {
         int count = getContentResolver().delete(IContentProvider.BOOK_CONTENT_URI, "_id=?", new String[]{"5"});
-        LogUtil.i("删除成功：" + count + ",总：" + idValue);
+        L.i("删除成功：" + count + ",总：" + idValue);
 
         if (count > 0 && count < idValue) {
             idValue -= count;
@@ -97,7 +97,7 @@ public class ContentProviderActivity extends BaseActivity {
                 idValue++;
                 int id = bookCursor.getInt(0);
                 String name = bookCursor.getString(1);
-                LogUtil.i("id:" + id + ",name:" + name);
+                L.i("id:" + id + ",name:" + name);
             }
             bookCursor.close();
         }

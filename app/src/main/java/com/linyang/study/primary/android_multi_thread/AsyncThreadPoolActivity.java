@@ -1,4 +1,4 @@
-package com.linyang.study.primary.android_thread;
+package com.linyang.study.primary.android_multi_thread;
 
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.linyang.study.R;
 import com.linyang.study.app.BaseActivity;
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 import com.linyang.study.app.util.ArmsUtils;
 
 import java.text.SimpleDateFormat;
@@ -77,7 +77,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
                     @Override
                     public void run() {
                         super.run();
-                        LogUtil.i("run Thread 运行线程:" + Thread.currentThread().getName());
+                        L.i("run Thread 运行线程:" + Thread.currentThread().getName());
                     }
                 }.run();
 
@@ -86,27 +86,27 @@ public class AsyncThreadPoolActivity extends BaseActivity {
                     @Override
                     public void run() {
                         super.run();
-                        LogUtil.i("start Thread 运行线程:" + Thread.currentThread().getName());
+                        L.i("start Thread 运行线程:" + Thread.currentThread().getName());
                     }
                 }.start();
                 break;
 
             case R.id.bt_runnable:
-                new Thread(new Runnable() {
+                new Thread() {
 
                     @Override
                     public void run() {
-                        LogUtil.i("start Runnable 运行线程:" + Thread.currentThread().getName());
+                        L.i("start Runnable 运行线程:" + Thread.currentThread().getName());
                     }
-                }).run();
+                }.run();
 
-                new Thread(new Runnable() {
+                new Thread() {
 
                     @Override
                     public void run() {
-                        LogUtil.i("run Runnable 运行线程:" + Thread.currentThread().getName());
+                        L.i("run Runnable 运行线程:" + Thread.currentThread().getName());
                     }
-                }).start();
+                }.start();
                 break;
 
             case R.id.bt_callable:
@@ -154,7 +154,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
     @Override
     public void onHandlerReceive(Message msg) {
         super.onHandlerReceive(msg);
-        LogUtil.i("HandlerThread 处理消息:" + msg.obj.toString());
+        L.i("HandlerThread 处理消息:" + msg.obj.toString());
 
     }
 
@@ -174,7 +174,7 @@ public class AsyncThreadPoolActivity extends BaseActivity {
         @Override
         protected Void doInBackground(Integer... integers) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss", Locale.CHINA);
-            LogUtil.i(name + "------------" + simpleDateFormat.format(new Date(System.currentTimeMillis())));
+            L.i(name + "------------" + simpleDateFormat.format(new Date(System.currentTimeMillis())));
             return null;
         }
 

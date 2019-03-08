@@ -28,6 +28,8 @@
         <item>双屏异显</item>
         <item>异步线程池</item>
         <item>IPC机制</item>
+        <item>AsyncTask</item>
+        <item>Handler</item>
         <item>Glide</item>
         <item>WebView</item>
         <item>Android Architecture Components</item>

@@ -9,7 +9,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 
-import com.linyang.study.app.util.LogUtil;
+import com.linyang.study.app.util.L;
 
 import androidx.annotation.Nullable;
 
@@ -29,7 +29,7 @@ public class MessengerService extends Service {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MESSAGE_FROM_CLIENT:
-                    LogUtil.i("Message from Messenger Client:" + msg.getData().toString());
+                    L.i("Message from Messenger Client:" + msg.getData().toString());
 
                     try {
                         // 返回消息到客户端
