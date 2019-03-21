@@ -1,6 +1,7 @@
 package com.linyang.study.other.glide;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -30,6 +31,8 @@ public class GlideTestActivity extends BaseActivity {
     AppCompatButton btLoad;
     @BindView(R.id.iv_image)
     ImageView ivImage;
+    @BindView(R.id.bt_cache_load)
+    AppCompatButton btCacheLoad;
 
     private RequestOptions mRequestOptions;
 
@@ -51,23 +54,31 @@ public class GlideTestActivity extends BaseActivity {
                 .error(R.drawable.empty_photo);// 加载出错显示
     }
 
-    @OnClick(R.id.bt_load)
-    public void onViewClicked() {
-        Glide.with(ivImage.getContext())
-                .setDefaultRequestOptions(mRequestOptions)
-                .load(URL_GIF)
-                .listener(new RequestListener<Drawable>() {
+    @OnClick({R.id.bt_load, R.id.bt_cache_load})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.bt_load:
+                Glide.with(ivImage.getContext())
+                        .setDefaultRequestOptions(mRequestOptions)
+                        .load(URL_GIF)
+                        .listener(new RequestListener<Drawable>() {
 
-                    @Override
-                    public boolean onLoadFailed(GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        return false;
-                    }
+                            @Override
+                            public boolean onLoadFailed(GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                return false;
+                            }
 
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        return false;
-                    }
-                })
-                .into(ivImage);
+                            @Override
+                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                return false;
+                            }
+                        })
+                        .into(ivImage);
+                break;
+
+            case R.id.bt_cache_load:
+                System.gc();
+                break;
+        }
     }
 }

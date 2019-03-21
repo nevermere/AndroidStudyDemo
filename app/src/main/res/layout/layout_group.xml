@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--1.Group有一个属性constraint_referenced_ids,可以将那些需要同时隐藏的view丢进去.-->
+    <!--2.别将view放Group包起来.这样会报错,因为Group只是一个不执行onDraw()的View.-->
+    <!--3.使用多个 Group 时，尽量不要将某个View重复的放在 多个 Group 中，实测可能会导致隐藏失效.-->
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_1,iv_1,btn_1" />
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_bitmap_drawable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_1" />
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮1"
+        app:layout_constraintLeft_toRightOf="@id/iv_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

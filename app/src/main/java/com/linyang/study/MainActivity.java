@@ -13,6 +13,7 @@ import com.linyang.study.app.util.ArmsUtils;
 import com.linyang.study.other.NotificationActivity;
 import com.linyang.study.other.SkinsActivity;
 import com.linyang.study.other.WindowManagerActivity;
+import com.linyang.study.other.constraint_layout.ConstraintLayoutActivity;
 import com.linyang.study.other.glide.GlideTestActivity;
 import com.linyang.study.other.jetpack.activity.JetPackMainActivity;
 import com.linyang.study.other.moshi.MoshiActivity;
@@ -58,6 +59,8 @@ public class MainActivity extends BaseActivity implements BaseRecycleAdapter.OnR
     @BindView(R.id.rv_menu_list)
     RecyclerView rvMenuList;
 
+    private MainMenuAdapter mAdapter;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -88,10 +91,10 @@ public class MainActivity extends BaseActivity implements BaseRecycleAdapter.OnR
         // 设置加载动画
         rvMenuList.setLayoutAnimation(controller);
         // 设置适配器
-        MainMenuAdapter adapter = new MainMenuAdapter(this, menuList);
-        rvMenuList.setAdapter(adapter);
+        mAdapter = new MainMenuAdapter(this, menuList);
+        rvMenuList.setAdapter(mAdapter);
         // 列表设置点击事件
-        adapter.setOnItemClickListener(this);
+        mAdapter.setOnItemClickListener(this);
     }
 
     @Override
@@ -186,6 +189,9 @@ public class MainActivity extends BaseActivity implements BaseRecycleAdapter.OnR
                 break;
             case 29:
                 startActivity(new Intent(this, LifeObserverActivity.class));
+                break;
+            case 30:
+                startActivity(new Intent(this, ConstraintLayoutActivity.class));
                 break;
         }
     }

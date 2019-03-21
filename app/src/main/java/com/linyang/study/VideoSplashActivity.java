@@ -19,6 +19,14 @@ public class VideoSplashActivity extends BaseActivity {
     MyVideoView splashView;
 
     @Override
+    protected void onDestroy() {
+        splashView.stopPlayback();
+        splashView.clearAnimation();
+        splashView.removeCallbacks(null);
+        super.onDestroy();
+    }
+
+    @Override
     public int getLayoutId() {
         // 设置为默认主题
         setTheme(R.style.AppTheme);

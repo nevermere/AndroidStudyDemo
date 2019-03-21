@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--按比例设置宽高(Ratio)-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:text="Ratio"
+        android:textAlignment="center" />
+
+    <include
+        layout="@layout/layout_ratio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <!--Chains,设置属性layout_constraintHorizontal_chainStyle或layout_constraintVertical_chainStyle链的第一个元素时，链的行为将根据指定的样式（默认值CHAIN_SPREAD）更改-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:text="Chains链"
+        android:textAlignment="center" />
+
+    <include
+        layout="@layout/layout_chains"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <!--Guideline可以创建相对于ConstraintLayout的水平或者垂直准线. 这根辅助线,有时候可以帮助我们定位.-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:text="GuideLine引导线"
+        android:textAlignment="center" />
+
+    <include
+        layout="@layout/layout_guide_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--Barrier屏障-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:text="Barrier屏障"
+        android:textAlignment="center" />
+
+    <include
+        layout="@layout/layout_barrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--Group虚拟视图,可以把View放到里面,然后Group可以同时控制这些view的隐藏.-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:text="Group虚拟视图"
+        android:textAlignment="center" />
+
+    <include
+        layout="@layout/layout_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

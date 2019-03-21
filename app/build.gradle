@@ -80,12 +80,12 @@ dependencies {
     // DiskLruCache
     implementation 'com.jakewharton:disklrucache:2.0.2'
     // Glide图片加载开源库
-    implementation 'com.github.bumptech.glide:glide:4.4.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     // WorkManager
-    implementation 'android.arch.work:work-runtime:1.0.0-rc02'
+    implementation 'android.arch.work:work-runtime:1.0.0'
     implementation 'android.arch.work:work-firebase:1.0.0-alpha11'
-    androidTestImplementation 'android.arch.work:work-testing:1.0.0-rc02'
+    androidTestImplementation 'android.arch.work:work-testing:1.0.0'
     // Moshi Json解析库
     implementation 'com.squareup.moshi:moshi:1.8.0'
     // 开源动画库

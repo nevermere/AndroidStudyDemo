@@ -8,7 +8,13 @@
         android:id="@+id/bt_load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="加载" />
+        android:text="网络加载" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_cache_load"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带缓存的网络加载" />
 
     <ImageView
         android:id="@+id/iv_image"

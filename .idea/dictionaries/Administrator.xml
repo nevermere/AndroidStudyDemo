@@ -2,6 +2,10 @@
   <dictionary name="Administrator">
     <words>
       <w>icontentprovider</w>
+      <w>miui</w>
+      <w>oppo</w>
+      <w>vivo</w>
+      <w>xiaomi</w>
     </words>
   </dictionary>
 </component>

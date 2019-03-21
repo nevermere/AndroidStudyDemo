@@ -33,6 +33,7 @@
         <item>Glide</item>
         <item>WebView</item>
         <item>Android Architecture Components</item>
+        <item>ConstraintLayout</item>
     </string-array>
 
     <!--安卓动画插值器列表-->
