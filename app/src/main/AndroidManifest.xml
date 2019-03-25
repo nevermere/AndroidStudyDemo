@@ -103,6 +103,7 @@
         <activity android:name=".primary.android_multi_thread.HandlerTestActivity" />
         <activity android:name=".primary.android_multi_thread.async_task.AsyncTaskActivity" />
         <activity android:name=".other.constraint_layout.ConstraintLayoutActivity" />
+        <activity android:name=".advanced.android_events.AndroidEventActivity" />
 
         <!--自定义小部件服务-->
         <receiver

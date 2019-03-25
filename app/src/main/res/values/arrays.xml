@@ -34,6 +34,7 @@
         <item>WebView</item>
         <item>Android Architecture Components</item>
         <item>ConstraintLayout</item>
+        <item>安卓事件分发机制</item>
     </string-array>
 
     <!--安卓动画插值器列表-->

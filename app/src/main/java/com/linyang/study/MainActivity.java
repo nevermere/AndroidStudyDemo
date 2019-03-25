@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
+import com.linyang.study.advanced.android_events.AndroidEventActivity;
 import com.linyang.study.advanced.android_ipc.AndroidIPCActivity;
 import com.linyang.study.app.BaseActivity;
 import com.linyang.study.app.adapter.BaseRecycleAdapter;
@@ -192,6 +193,9 @@ public class MainActivity extends BaseActivity implements BaseRecycleAdapter.OnR
                 break;
             case 30:
                 startActivity(new Intent(this, ConstraintLayoutActivity.class));
+                break;
+            case 31:
+                startActivity(new Intent(this, AndroidEventActivity.class));
                 break;
         }
     }

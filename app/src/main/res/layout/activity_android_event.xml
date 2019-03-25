@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.linyang.study.advanced.android_events.view_group.EventViewGroupA
+        android:id="@+id/view_group_a"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@color/one"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.linyang.study.advanced.android_events.view.EventViewA
+            android:id="@+id/view_a"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@color/two" />
+
+        <com.linyang.study.advanced.android_events.view_group.EventViewGroupB
+            android:id="@+id/view_group_b"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:background="@color/three"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.linyang.study.advanced.android_events.view.EventViewB
+                android:id="@+id/view_b"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@color/accent" />
+
+        </com.linyang.study.advanced.android_events.view_group.EventViewGroupB>
+
+    </com.linyang.study.advanced.android_events.view_group.EventViewGroupA>
+
+</LinearLayout>
