@@ -27,5 +27,6 @@
     <drawable name="color_news_item_pressed">#11000000</drawable>
 
     <color name="color_sel_skin_btn_text">#24302b</color>
+    <color name="fab_ripple_color">#1f000000</color>
 
 </resources>

@@ -76,5 +76,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <!--Circular positioning-->
+    <include
+        layout="@layout/layout_circular_positioning"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom" />
 
 </LinearLayout>

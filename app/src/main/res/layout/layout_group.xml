@@ -9,6 +9,7 @@
     <!--3.使用多个 Group 时，尽量不要将某个View重复的放在 多个 Group 中，实测可能会导致隐藏失效.-->
 
     <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
